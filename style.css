@@ -1,0 +1,40 @@
+*{box-sizing:border-box}
+:root{color-scheme:dark;--bg:#080811;--panel:#10101d;--red:#ff315b;--blue:#3984ff;--text:#f5f5ff;--muted:#888ba7}
+body{margin:0;min-height:100vh;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,sans-serif;overflow-x:hidden}
+.glow{position:fixed;width:260px;height:260px;border-radius:50%;filter:blur(110px);opacity:.2;pointer-events:none;z-index:0}
+.glow-red{background:var(--red);top:5%;left:-150px}
+.glow-blue{background:var(--blue);right:-150px;bottom:8%}
+.app{position:relative;z-index:1;width:min(100%,680px);min-height:100dvh;margin:auto;padding:22px 18px 14px;display:flex;flex-direction:column}
+.topbar{display:flex;align-items:center;gap:12px;padding-bottom:22px;border-bottom:1px solid #ffffff12}
+.logo{width:46px;height:46px;display:grid;place-items:center;border-radius:15px;background:linear-gradient(135deg,#ff315b,#9b3cff 55%,#3984ff);font-size:25px;font-weight:900;box-shadow:0 0 25px #773fff35}
+.logo span{font-size:12px;position:absolute;margin:25px 0 0 23px}
+.brand h1{font-size:19px;letter-spacing:2px;margin:0;font-weight:850}
+.brand h1 span{color:var(--blue)}
+.brand p{margin:4px 0 0;font-size:9px;letter-spacing:1.6px;color:var(--muted)}
+.online{display:inline-block;width:6px;height:6px;background:#42edaa;border-radius:50%;box-shadow:0 0 9px #42edaa}
+.icon-btn{margin-left:auto;width:40px;height:40px;border:1px solid #ffffff17;border-radius:13px;background:#ffffff08;color:white;font-size:24px}
+.welcome{text-align:center;padding:35px 0 22px}
+.orb{width:94px;height:94px;margin:0 auto 22px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 25%,#ff6883,#bd315e 38%,#4326a0 70%,#10101d);box-shadow:0 0 30px #ff315b35,0 0 65px #3984ff24;animation:float 4s ease-in-out infinite}
+.orb span{font-size:40px;text-shadow:0 0 22px white}
+.eyebrow{font-size:10px;letter-spacing:3px;color:#a7a8c6;font-weight:700}
+.welcome h2{font-size:42px;line-height:1.12;letter-spacing:-1.8px;margin:13px 0}
+.welcome h2 span{background:linear-gradient(90deg,#ff6480,#b37aff,#65a5ff);background-clip:text;-webkit-background-clip:text;color:transparent}
+.welcome p{font-size:14px;line-height:1.7;color:#9c9db5;margin:0}
+.suggestions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:4px 0 18px}
+.suggestion{min-height:55px;text-align:left;padding:12px;border:1px solid #ffffff15;border-radius:15px;background:linear-gradient(135deg,#ffffff08,#ffffff03);color:#d6d6eb;font-size:12px;line-height:1.5}
+.suggestion:active,.icon-btn:active{transform:scale(.97)}
+.chat{display:flex;flex-direction:column;gap:12px;padding:4px 0 15px}
+.message{max-width:88%;padding:12px 15px;border-radius:17px;font-size:14px;line-height:1.55;overflow-wrap:anywhere;white-space:pre-wrap}
+.message.user{align-self:flex-end;background:linear-gradient(120deg,#a92e63,#5142b5);border-bottom-right-radius:5px}
+.message.assistant{align-self:flex-start;background:#141421;border:1px solid #ffffff12;border-bottom-left-radius:5px}
+.composer{margin-top:auto;border:1px solid #ffffff20;border-radius:20px;padding:12px;background:#11111dcc;box-shadow:0 0 35px #0005;backdrop-filter:blur(16px)}
+textarea{display:block;width:100%;resize:none;max-height:120px;min-height:35px;border:0;outline:0;background:transparent;color:white;font:inherit;font-size:15px;padding:7px}
+textarea::placeholder{color:#73758f}
+.composer-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:8px}
+.hint{font-size:9px;letter-spacing:1.5px;color:#777b9a}
+#sendBtn{width:42px;height:42px;border:0;border-radius:14px;background:linear-gradient(135deg,var(--red),#a644d7 55%,var(--blue));color:white;font-size:26px;font-weight:700;box-shadow:0 0 20px #b53dca40}
+footer{text-align:center;font-size:9px;letter-spacing:2px;color:#646780;padding:17px 0 5px}
+footer span{color:var(--red);padding:0 5px}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@media(min-height:800px){.welcome{padding-top:55px;padding-bottom:30px}}
+@media(max-width:380px){.app{padding:16px 13px 10px}.welcome h2{font-size:36px}.suggestion{font-size:11px;padding:10px}.orb{width:82px;height:82px}}
