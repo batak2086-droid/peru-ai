@@ -1,3 +1,4 @@
+
 name: Build PERU AI APK
 
 on:
@@ -32,6 +33,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Accept Android SDK licenses
+        run: yes | sdkmanager --licenses
+
       - name: Sync Capacitor
         run: npx cap sync android
 
@@ -45,3 +49,4 @@ jobs:
           name: peru-ai-debug-apk
           path: android/app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
+
